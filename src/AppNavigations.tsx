@@ -11,7 +11,7 @@ export default function AppNavigations() {
   return (
     <main>
        <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route path='stormcoin' element={<Home />}/>
         <Route path="ref" element={<RefPages />} />
         <Route path="boost" element={<Boost />}/>
         <Route path="task" element={<Task />} />

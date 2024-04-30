@@ -29,7 +29,7 @@ export default function Navbar() {
             </Link>
         </div>
         <div className="nav-tabs">
-            <Link to='/'>
+            <Link to='/stormcoin'>
                 <img src={logo} alt="logo" />
                 <span>
                     Home
