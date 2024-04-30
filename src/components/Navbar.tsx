@@ -1,39 +1,40 @@
 import logo from '../assets/tapps.png'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   return (
     <nav>
         <div className="nav-tabs">
-            <a href="">
+            <Link to='ref'>
                 <img src={logo} alt="logo" />
                 <span>
-                    Hello
+                    Refs
                 </span>
-            </a>
+            </Link>
         </div>
         <div className="nav-tabs">
-            <a href="">
+            <Link to='task'>
                 <img src={logo} alt="logo" />
                 <span>
-                    Hello
+                    Task
                 </span>
-            </a>
+            </Link>
         </div>
         <div className="nav-tabs">
-            <a href="">
+            <Link to='boost'>
                 <img src={logo} alt="logo" />
                 <span>
-                    Hello
+                    Boost
                 </span>
-            </a>
+            </Link>
         </div>
         <div className="nav-tabs">
-            <a href="">
+            <Link to='/'>
                 <img src={logo} alt="logo" />
                 <span>
-                    Hello
+                    Home
                 </span>
-            </a>
+            </Link>
         </div>
     </nav>
   )
