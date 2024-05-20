@@ -5,13 +5,17 @@ import './index.css'
 
 import WebApp from '@twa-dev/sdk'
 import { BrowserRouter } from 'react-router-dom'
+import  {MyProvider}  from './Context';
 
 WebApp.ready();
+WebApp.expand();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <MyProvider>
     <BrowserRouter>
      <App />
     </BrowserRouter>
+    </MyProvider>
   </React.StrictMode>,
 )

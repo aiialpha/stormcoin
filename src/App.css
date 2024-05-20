@@ -2,13 +2,14 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
 .logo {
-  height: 6em;
+  height: 8.5em;
   padding: 1.5em;
+  border-radius: 50px;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -19,17 +20,24 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 nav{
-  padding: 10px 0 5px;
+  /* padding: 10px 0 5px; */
+  display: flex;
+  align-items: center;
    position: fixed;
-   display: flex;
-   justify-content: space-evenly;
-   align-items: center;
   bottom: 10px;
   left: 10px;
   width: 95%;
-  height: 50px;
-  border-radius: 10px;
-  background-color: white;
+  height: 65px;
+  border-radius: 33px;
+  background-color: #dededebb;
+  overflow: hidden;
+}
+.nav-bar{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 100%;
+   overflow: hidden;
 }
 nav img{
   width: 30px;
@@ -37,20 +45,30 @@ nav img{
 }
 .nav-tabs{
   width: 25%;
+  height: 100%;
 }
-.nav-tabs a{
+.nav-tabs {
+  padding: 10px;
   display: flex;
   align-items: center;
   width: 100%;
  flex-direction: column;
+ background-color: none;
+ user-select: none;
+ height: 100%;
+ font-size: 12px;
+ color: white;
+}
+.nav-tabs:active, .nav-tabs:hover, .nav-tabs:focus-visible ,.nav-tabs:focus-within{
+  text-decoration: none;
+  border: none;
+  background-color: #dededece;
+  color: blue;
 }
 .nav li{
   height: 80%;
 }
-.nav a{
-  height: 100%;
- position: relative;
-}
+
 .nav a span{
   position:  absolute;
   bottom: -18px;
@@ -61,6 +79,16 @@ nav img{
   margin: 0;
   width: 40%;
 }
+
+.community{
+  height: 60px;
+  width: 95%;
+  border-radius: 50px;
+  place-content: center;
+  background-color: rgba(255, 255, 255, 0.507);
+
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
