@@ -1,16 +1,16 @@
 import logo from '../assets/tapps.png'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
     <nav>
         <div className="nav-bar">
-            <Link className='nav-tabs' to='ref'>
+            <NavLink className='nav-tabs' to='ref'>
                 <img src={logo} alt="logo" />
                 <span>
                     Refs
                 </span>
-            </Link>
+            </NavLink>
             <Link className='nav-tabs' to='task'>
                 <img src={logo} alt="logo" />
                 <span>

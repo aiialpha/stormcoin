@@ -5,11 +5,22 @@ export default function Notfound() {
   return (
     <div style={{
         placeContent:'center',
-        height:800
+        height:'90vh'
     }}>
         
         In development
+        <br/><br/>
         <br />
+        <Link to='test' style={{
+        backgroundColor:'white',
+        borderRadius:20,
+        padding:15,
+        paddingInline:25,
+        marginTop:15
+        }} >
+        Test
+        </Link>
+        <br /><br/>
         <br />
     <Link to='stormcoin' style={{
         backgroundColor:'white',

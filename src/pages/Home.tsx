@@ -8,23 +8,31 @@ import  useCountContext  from '../UseContext';
 
 export default function  Home(){
     const {count, setCount} = useCountContext();
-  
+    const handleTouchStart = () => {
+      setCount(count => count+10000);
+    };
    
   return (
     <>
-    <div className="community">
+    <div className="community" >
       <Link to='community'>
        Click to join or create community
       </Link>
    
     </div>
-    <h2>Storm Coin </h2>
-    <div className="card">
-      <h3>count is {count}</h3>
+    <div className="card balance">
+      {/* <img src={twaLogo} alt="logo" /> */}
+      <h2> {count}</h2>
     </div>
-    <div onClick={() => setCount((count) => count + 1)}>
+    <div className="clicker-container">
+       <div
+    className='Cliker'
+     onTouchStart={handleTouchStart}>
       <img src={twaLogo} className="logo" alt="TWA logo" />
     </div>
+    <div className="upward-numbers">1</div>
+    </div>
+   
 
     {/*  */}
     {/* <button onClick={()=>setMultiplier( multiplier +2)}>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './touch.css';
+import TestOnTouch from './TestOnTouch';
 
 interface TouchPoint {
   id: number;
@@ -52,8 +53,8 @@ const TouchTest: React.FC = () => {
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
   };
-
   return (
+    <>
     <div
       id="touchArea"
       onTouchStart={handleTouchStart}
@@ -63,12 +64,16 @@ const TouchTest: React.FC = () => {
     >
       {touchPoints.map(point => (
         <div
+        
           key={point.id}
           className="touchPoint"
           style={{ left: point.x - 10, top: point.y - 10 }}
         />
       ))}
+      +1
     </div>
+    <TestOnTouch />
+    </>
   );
 };
 
