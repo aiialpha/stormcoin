@@ -2,14 +2,36 @@
 import { Link } from 'react-router-dom';
 import twaLogo from '../assets/tapps.png'
 import  useCountContext  from '../UseContext';
+import { useState } from 'react';
 
-
+interface Animation {
+  id: number;
+  x: number;
+  y: number;
+}
 // import WebApp from "@twa-dev/sdk";
 
 export default function  Home(){
     const {count, setCount} = useCountContext();
-    const handleTouchStart = () => {
-      setCount(count => count+10000);
+  fetch('localhost:9092/')
+    const [animations, setAnimations] = useState<Animation[]>([]);
+    const handleTouchStart = (event: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+      setCount(prevCount => prevCount + 1);
+  
+      // Get the coordinates of the touch or click event
+      const x = event.clientX || (event.touches && event.touches[0].clientX);
+      const y = event.clientY || (event.touches && event.touches[0].clientY);
+  
+      // Create a unique key for the animation instance
+      const newAnimation: Animation = { id: Date.now(), x, y };
+  
+      // Add a new animated instance to the array
+      setAnimations(prevAnimations => [...prevAnimations, newAnimation]);
+  
+      // Remove the animated instance after the animation duration
+      setTimeout(() => {
+        setAnimations(prevAnimations => prevAnimations.filter(anim => anim.id !== newAnimation.id));
+      }, 2000); // Duration should match the CSS animation duration
     };
    
   return (
@@ -27,10 +49,18 @@ export default function  Home(){
     <div className="clicker-container">
        <div
     className='Cliker'
-     onTouchStart={handleTouchStart}>
-      <img src={twaLogo} className="logo" alt="TWA logo" />
+     >
+      <img src={twaLogo} className="logo" alt="TWA logo" onTouchStart={handleTouchStart} />
     </div>
-    <div className="upward-numbers">1</div>
+    {animations.map(anim => (
+          <div
+            key={anim.id}
+            className="upward-numbers"
+            style={{ left: anim.x, top: anim.y }}
+          >
+            1
+          </div>
+        ))}
     </div>
    
 

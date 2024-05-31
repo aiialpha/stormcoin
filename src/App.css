@@ -75,7 +75,7 @@ nav img{
  font-size: 12px;
  color: white;
 }
-.nav-tabs:active, .nav-tabs:focus-visible ,.nav-tabs:focus-within, .nav-tabs .active{
+.nav-tabs:active, .nav-tabs:focus-visible ,.nav-tabs:focus-within, .nav-tabs.active{
   text-decoration: none;
   border: none;
   background-color: #dededece;
@@ -113,10 +113,7 @@ nav img{
   height: 300px;
 
 }
-.upward-numbers{
-  position: absolute;
-  opacity: 0;
-}
+
 
 /*
 Booster page css
@@ -134,16 +131,23 @@ Booster page css
   width: 90%;
   margin: 10px auto ;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upward-numbers{
+  position: absolute;
+  opacity: 0;
+  animation: moveUp 2s forwards;
+  transform: translate(-50%, -50%);
 }
 
+@keyframes moveUp {
+  0% {
+    transform: translate(-50%, -50%) translateY(0); /* Add translate(-50%, -50%) for centering */
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-50px); /* Add translate(-50%, -50%) for centering */
+    opacity: 0;
+  }
+}
 /* @media (prefers-reduced-motion: no-preference) {
   a:not(.logo)  {
     animation: logo-spin infinite 20s linear;

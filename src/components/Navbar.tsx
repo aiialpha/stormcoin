@@ -1,5 +1,5 @@
 import logo from '../assets/tapps.png'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
@@ -11,26 +11,26 @@ export default function Navbar() {
                     Refs
                 </span>
             </NavLink>
-            <Link className='nav-tabs' to='task'>
+            <NavLink className='nav-tabs' to='task'>
                 <img src={logo} alt="logo" />
                 <span>
                     Task
                 </span>
-            </Link>
+            </NavLink>
               
-            <Link className='nav-tabs' to='boost'>
+            <NavLink className='nav-tabs' to='boost'>
                 <img src={logo} alt="logo" />
                 <span>
                     Boost
                 </span>
-            </Link>
+            </NavLink>
               
-            <Link className='nav-tabs' to='/stormcoin'>
+            <NavLink className='nav-tabs' to='/stormcoin'>
                 <img src={logo} alt="logo" />
                 <span>
                     Home
                 </span>
-            </Link>
+            </NavLink>
                </div>
     </nav>
   )
