@@ -75,11 +75,14 @@ nav img{
  font-size: 12px;
  color: white;
 }
+.nav-tabs svg{
+  font-size: 25px;
+}
 .nav-tabs:active, .nav-tabs:focus-visible ,.nav-tabs:focus-within, .nav-tabs.active{
   text-decoration: none;
   border: none;
   background-color: #dededece;
-  color: blue;
+  color: #ff8800;
 }
 .nav li{
   height: 80%;
@@ -113,6 +116,10 @@ nav img{
   height: 300px;
 
 }
+.Cliker{
+  width: 240px;
+  margin-inline: auto;
+}
 
 
 /*
@@ -136,6 +143,10 @@ Booster page css
   opacity: 0;
   animation: moveUp 2s forwards;
   transform: translate(-50%, -50%);
+  font-size: 25px;
+}
+.upward-numbers::before{
+  content: '+';
 }
 
 @keyframes moveUp {

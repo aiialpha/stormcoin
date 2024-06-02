@@ -1,8 +1,9 @@
 
 import { Link } from 'react-router-dom';
-import twaLogo from '../assets/tapps.png'
+// import twaLogo from '../assets/tapps.png'
 import  useCountContext  from '../UseContext';
 import { useState } from 'react';
+import Coin from '../components/Coin';
 
 interface Animation {
   id: number;
@@ -13,15 +14,19 @@ interface Animation {
 
 export default function  Home(){
     const {count, setCount} = useCountContext();
-  fetch('localhost:9092/')
+  //fetch('http://localhost:9092/get_details')
+  //.then(res => res.json())
+ // .then(data => console.log(data))
     const [animations, setAnimations] = useState<Animation[]>([]);
-    const handleTouchStart = (event: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+    const handleTouchStart = (event: React.TouchEvent<HTMLDivElement> ) => {
       setCount(prevCount => prevCount + 1);
   
       // Get the coordinates of the touch or click event
-      const x = event.clientX || (event.touches && event.touches[0].clientX);
-      const y = event.clientY || (event.touches && event.touches[0].clientY);
-  
+      const x =  (event.touches && event.touches[0].clientX);
+      const y =  (event.touches && event.touches[0].clientY);
+      //const touch = event?.touches[0];
+      //const x = touch.clientX;
+      //const y = touch.clientY;
       // Create a unique key for the animation instance
       const newAnimation: Animation = { id: Date.now(), x, y };
   
@@ -49,8 +54,10 @@ export default function  Home(){
     <div className="clicker-container">
        <div
     className='Cliker'
+     onTouchStart={handleTouchStart} 
      >
-      <img src={twaLogo} className="logo" alt="TWA logo" onTouchStart={handleTouchStart} />
+      <Coin />
+      {/* <img src={twaLogo} className="logo" alt="TWA logo"/> */}
     </div>
     {animations.map(anim => (
           <div

@@ -1,34 +1,38 @@
-import logo from '../assets/tapps.png'
+
 import { NavLink } from 'react-router-dom'
+import { FaTasks } from "react-icons/fa";
+import { IoHome } from "react-icons/io5";
+import { BsRocketTakeoffFill } from "react-icons/bs";
+import { IoPeople } from "react-icons/io5";
 
 export default function Navbar() {
   return (
     <nav>
         <div className="nav-bar">
-            <NavLink className='nav-tabs' to='ref'>
-                <img src={logo} alt="logo" />
+            <NavLink className='nav-tabs' to='stormcoin'>
+            <IoHome />
                 <span>
-                    Refs
+                    Home
                 </span>
             </NavLink>
             <NavLink className='nav-tabs' to='task'>
-                <img src={logo} alt="logo" />
+                <FaTasks />
                 <span>
                     Task
                 </span>
             </NavLink>
               
             <NavLink className='nav-tabs' to='boost'>
-                <img src={logo} alt="logo" />
+                <BsRocketTakeoffFill />
                 <span>
                     Boost
                 </span>
             </NavLink>
               
-            <NavLink className='nav-tabs' to='/stormcoin'>
-                <img src={logo} alt="logo" />
+            <NavLink className='nav-tabs' to='/ref'>
+                <IoPeople />
                 <span>
-                    Home
+                    Refs
                 </span>
             </NavLink>
                </div>
