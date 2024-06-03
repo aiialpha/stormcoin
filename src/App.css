@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
+  user-select: none;
 }
 
 .logo {
@@ -12,6 +13,9 @@
   border-radius: 50px;
   will-change: filter;
   transition: filter 300ms;
+}
+.balance{
+  user-select: none;
 }
 /* .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -23,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  img{
+  :is(img){
       width: 25px;
   height: 25px;
   }
@@ -105,7 +109,7 @@ nav img{
   border-radius: 50px;
   place-content: center;
   background-color: rgba(255, 255, 255, 0.507);
-  a{
+  :is(a){
     color: white;
   }
 
@@ -119,6 +123,7 @@ nav img{
 .Cliker{
   width: 240px;
   margin-inline: auto;
+  position: relative;
 }
 
 
@@ -144,6 +149,8 @@ Booster page css
   animation: moveUp 1s forwards;
   transform: translate(-50%, -50%);
   font-size: 30px;
+  font-weight: 600;
+  user-select: none;
 }
 .upward-numbers::before{
   content: '+';

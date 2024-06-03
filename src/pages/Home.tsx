@@ -49,7 +49,7 @@ export default function  Home(){
     </div>
     <div className="card balance">
       {/* <img src={twaLogo} alt="logo" /> */}
-      <h2> {count}</h2>
+      <h2 className='balance'> {count}</h2>
     </div>
     <div className="clicker-container">
        <div
@@ -57,9 +57,7 @@ export default function  Home(){
      onTouchStart={handleTouchStart} 
      >
       <Coin />
-      {/* <img src={twaLogo} className="logo" alt="TWA logo"/> */}
-    </div>
-    {animations.map(anim => (
+          {animations.map(anim => (
           <div
             key={anim.id}
             className="upward-numbers"
@@ -68,6 +66,9 @@ export default function  Home(){
             1
           </div>
         ))}
+      {/* <img src={twaLogo} className="logo" alt="TWA logo"/> */}
+    </div>
+
     </div>
    
 
