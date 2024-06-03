@@ -141,9 +141,9 @@ Booster page css
 .upward-numbers{
   position: absolute;
   opacity: 0;
-  animation: moveUp 2s forwards;
+  animation: moveUp 1s forwards;
   transform: translate(-50%, -50%);
-  font-size: 25px;
+  font-size: 30px;
 }
 .upward-numbers::before{
   content: '+';
@@ -155,7 +155,7 @@ Booster page css
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) translateY(-50px); /* Add translate(-50%, -50%) for centering */
+    transform: translate(-50%, -50%) translateY(-60px); /* Add translate(-50%, -50%) for centering */
     opacity: 0;
   }
 }
