@@ -61,7 +61,7 @@ export default function  Home(){
           <div
             key={anim.id}
             className="upward-numbers"
-            style={{ left: anim.x, top: anim.y }}
+            style={{ left: anim.x - 80, top: anim.y - 235 }}
           >
             1
           </div>

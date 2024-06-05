@@ -68,7 +68,7 @@ const Coin: React.FC = () => {
       ctx.font = 'bold 40px Arial';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('Storm', canvas.width / 2, canvas.height / 2);
+      ctx.fillText('⚡', canvas.width / 2, canvas.height / 2);
     };
 
     // Initial draw

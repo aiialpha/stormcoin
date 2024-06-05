@@ -295,15 +295,17 @@
   "resolved" "https://registry.npmjs.org/@tma.js/sdk/-/sdk-2.2.0.tgz"
   "version" "2.2.0"
 
-"@twa-dev/sdk@^6.7.1":
-  "resolved" "https://registry.npmjs.org/@twa-dev/sdk/-/sdk-6.7.1.tgz"
-  "version" "6.7.1"
+"@twa-dev/sdk@^6.9.2":
+  "integrity" "sha512-xLqqtJfRtFyvM8arG8eoAtdY2GTdVzDdl64M3blHheY2OqON5QTG+WYUs5EZ+gPFXwxDxRCYTDbOJv1gycJqdA=="
+  "resolved" "https://registry.npmjs.org/@twa-dev/sdk/-/sdk-6.9.2.tgz"
+  "version" "6.9.2"
   dependencies:
-    "@twa-dev/types" "^6.7.0"
+    "@twa-dev/types" "^6.9.0"
 
-"@twa-dev/types@^6.7.0":
-  "resolved" "https://registry.npmjs.org/@twa-dev/types/-/types-6.7.0.tgz"
-  "version" "6.7.0"
+"@twa-dev/types@^6.9.0":
+  "integrity" "sha512-hBkIuJgVtkLAPPhKsNfgyBpgS+15spzUScy5jgpfPJPqXPaaUVDTaWHbeEUU+lUgHmryeQjWyz+UjS7987Pyaw=="
+  "resolved" "https://registry.npmjs.org/@twa-dev/types/-/types-6.9.0.tgz"
+  "version" "6.9.0"
 
 "@types/json-schema@^7.0.12":
   "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.12.tgz"
