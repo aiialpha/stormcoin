@@ -40,6 +40,10 @@
     margin: 0;
   }
 }
+.m-balance{
+  margin-block: 0;
+}
+
 nav{
   /* padding: 10px 0 5px; */
   display: flex;
@@ -124,6 +128,7 @@ nav img{
   width: 240px;
   margin-inline: auto;
   position: relative;
+
 }
 
 
@@ -143,8 +148,12 @@ Booster page css
   width: 90%;
   margin: 10px auto ;
 }
+#coin{
+  clip-path: circle(50%);
+}
 .upward-numbers{
   position: absolute;
+  z-index: 10;
   opacity: 0;
   animation: moveUp 1s forwards;
   transform: translate(-50%, -50%);

@@ -14,19 +14,18 @@ interface Animation {
 
 export default function  Home(){
     const {count, setCount} = useCountContext();
-  //fetch('http://localhost:9092/get_details')
+ // fetch('http://localhost:9092/get_details', {
+ // })
   //.then(res => res.json())
- // .then(data => console.log(data))
+// .then(data => console.log(data))
     const [animations, setAnimations] = useState<Animation[]>([]);
-    const handleTouchStart = (event: React.TouchEvent<HTMLDivElement> ) => {
+    const handleTouchStart = (event: React.TouchEvent<HTMLCanvasElement>) => {
       setCount(prevCount => prevCount + 1);
   
       // Get the coordinates of the touch or click event
       const x =  (event.touches && event.touches[0].clientX);
       const y =  (event.touches && event.touches[0].clientY);
-      //const touch = event?.touches[0];
-      //const x = touch.clientX;
-      //const y = touch.clientY;
+      
       // Create a unique key for the animation instance
       const newAnimation: Animation = { id: Date.now(), x, y };
   
@@ -54,9 +53,9 @@ export default function  Home(){
     <div className="clicker-container">
        <div
     className='Cliker'
-     onTouchStart={handleTouchStart} 
+    //  onTouchStart={handleTouchStart} 
      >
-      <Coin />
+      <Coin touch={handleTouchStart} />
           {animations.map(anim => (
           <div
             key={anim.id}

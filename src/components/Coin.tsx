@@ -1,7 +1,11 @@
 // src/Coin.tsx
 import React, { useEffect, useRef, useState } from 'react';
 
-const Coin: React.FC = () => {
+interface CoinProps {
+  touch: (event: React.TouchEvent<HTMLCanvasElement>) => void;
+}
+
+const Coin: React.FC<CoinProps> = ( {touch})  => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [coinColor, setCoinColor] = useState('#FFD700'); // Gold color
   const coinSize = 120; // Increase size for realism
@@ -86,7 +90,8 @@ const Coin: React.FC = () => {
       width={canvasSize}
       height={canvasSize}
       onClick={handleInteraction}
-      onTouchStart={handleInteraction}
+      onTouchStart={touch}
+      id='coin'
     />
   );
 };
