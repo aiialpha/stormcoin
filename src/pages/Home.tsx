@@ -20,23 +20,43 @@ export default function  Home(){
 // .then(data => console.log(data))
     const [animations, setAnimations] = useState<Animation[]>([]);
     const handleTouchStart = (event: React.TouchEvent<HTMLCanvasElement>) => {
-      setCount(prevCount => prevCount + 1);
-  
-      // Get the coordinates of the touch or click event
-      const x =  (event.touches && event.touches[0].clientX);
-      const y =  (event.touches && event.touches[0].clientY);
-      
-      // Create a unique key for the animation instance
-      const newAnimation: Animation = { id: Date.now(), x, y };
-  
-      // Add a new animated instance to the array
-      setAnimations(prevAnimations => [...prevAnimations, newAnimation]);
-  
-      // Remove the animated instance after the animation duration
+      setCount(prevCount => prevCount + event.touches.length  );
+   //console.log(event.touches.length)
+     
+       // Iterate over all touches
+    const newAnimations = Array.from(event.touches).map(touch => ({
+      id: Date.now() + touch.identifier, // Ensure unique ID for each touch
+      x: touch.clientX,
+      y: touch.clientY,
+    }));
+
+    // Add new animated instances to the array
+    setAnimations(prevAnimations => [...prevAnimations, ...newAnimations]);
+
+    // Remove the animated instances after the animation duration
+    newAnimations.forEach(newAnimation => {
       setTimeout(() => {
         setAnimations(prevAnimations => prevAnimations.filter(anim => anim.id !== newAnimation.id));
       }, 2000); // Duration should match the CSS animation duration
-    };
+    });
+  };
+
+ // Get the coordinates of the touch or click event
+   //   const x =  (event.touches && event.touches[0].clientX);
+    //  const y =  (event.touches && event.touches[0].clientY);
+      
+
+    //   // Create a unique key for the animation instance
+    //   const newAnimation: Animation = { id: Date.now(), x, y };
+  
+    //   // Add a new animated instance to the array
+    //   setAnimations(prevAnimations => [...prevAnimations, newAnimation]);
+  
+    //   // Remove the animated instance after the animation duration
+    //   setTimeout(() => {
+    //     setAnimations(prevAnimations => prevAnimations.filter(anim => anim.id !== newAnimation.id));
+    //   }, 2000); // Duration should match the CSS animation duration
+    // };
    
   return (
     <>

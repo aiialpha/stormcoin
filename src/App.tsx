@@ -1,7 +1,6 @@
 
 import "./App.css";
 import AppNavigations from "./AppNavigations";
-import PreventSwipeDown from "./PreventSwipeDown";
 
 
 
@@ -11,7 +10,6 @@ function App() {
  
   return (
     <>
-      <PreventSwipeDown />
       <AppNavigations />
       <Navbar />
     </>
