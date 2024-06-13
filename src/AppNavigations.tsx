@@ -29,6 +29,9 @@ export default function AppNavigations() {
      // console.log(event)
       if (window.scrollY === 0) {
         window.scrollTo(0, 1);
+        if (window.Telegram && window.Telegram.WebApp && typeof window.Telegram.WebApp.expand === 'function') {
+          window.Telegram.WebApp.expand();
+        }
       }
     };
 
