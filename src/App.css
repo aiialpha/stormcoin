@@ -6,6 +6,9 @@
   text-align: center;
   user-select: none;
 }
+#home{
+  overflow-y: hidden;
+}
 
 .logo {
   height: 9.5em;

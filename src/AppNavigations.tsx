@@ -42,24 +42,48 @@ export default function AppNavigations() {
     };
   }, [ts]);
 
-  useEffect(() => {
+   useEffect(() => {
     // Set the body's overflow, margin, height, and padding
-    document.body.style.overflowY = 'hidden';
-    document.body.style.marginTop = `${overflow}px`;
-    document.body.style.height = `${window.innerHeight + overflow}px`;
-    document.body.style.paddingBottom = `${overflow}px`;
+    const homeElement = document.getElementById('home');
+
+    if (homeElement) {
+      homeElement.style.overflowY = 'hidden';
+      //homeElement.style.marginTop = `${overflow}px`;
+      //homeElement.style.height = `${window.innerHeight + overflow}px`;
+      homeElement.style.paddingBottom = `${overflow}px`;
+    }
 
     // Scroll to the specified position
     window.scrollTo(0, overflow);
 
     // Clean up the styles when the component unmounts
     return () => {
-      document.body.style.overflowY = '';
-      document.body.style.marginTop = '';
-      document.body.style.height = '';
-      document.body.style.paddingBottom = '';
+      if (homeElement) {
+        homeElement.style.overflowY = '';
+        // homeElement.style.marginTop = '';
+        // homeElement.style.height = '';
+        // homeElement.style.paddingBottom = '';
+      }
     };
-  }, []);
+  }, [overflow]);
+  // useEffect(() => {
+  //   // Set the body's overflow, margin, height, and padding
+  //   document.body.style.overflowY = 'hidden';
+  //   document.body.style.marginTop = `${overflow}px`;
+  //   document.body.style.height = `${window.innerHeight + overflow}px`;
+  //   document.body.style.paddingBottom = `${overflow}px`;
+
+  //   // Scroll to the specified position
+  //   window.scrollTo(0, overflow);
+
+  //   // Clean up the styles when the component unmounts
+  //   return () => {
+  //     document.body.style.overflowY = '';
+  //     document.body.style.marginTop = '';
+  //     document.body.style.height = '';
+  //     document.body.style.paddingBottom = '';
+  //   };
+  // }, []);
 
   return (
     <main ref={scrollableElRef}>

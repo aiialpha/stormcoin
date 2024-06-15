@@ -20,7 +20,7 @@ export default function  Home(){
 // .then(data => console.log(data))
     const [animations, setAnimations] = useState<Animation[]>([]);
     const handleTouchStart = (event: React.TouchEvent<HTMLCanvasElement>) => {
-      setCount(prevCount => prevCount + event.touches.length  );
+      setCount(prevCount => prevCount + 1  );
    //console.log(event.touches.length)
      
        // Iterate over all touches
@@ -41,6 +41,8 @@ export default function  Home(){
     });
   };
 
+
+
  // Get the coordinates of the touch or click event
    //   const x =  (event.touches && event.touches[0].clientX);
     //  const y =  (event.touches && event.touches[0].clientY);
@@ -59,7 +61,7 @@ export default function  Home(){
     // };
    
   return (
-    <>
+    <div id='home'>
     <div className="community" >
       <Link to='community'>
        Click to join or create community
@@ -104,6 +106,6 @@ export default function  Home(){
         Show Alert
       </button>
     </div> */}
-    </>
+    </div>
   )
 }
