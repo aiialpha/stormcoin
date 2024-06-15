@@ -1,10 +1,11 @@
-
+import useCountContext from "../UseContext";
 
 export default function Boost() {
+  const {count} = useCountContext();
   return (
     <div>
       <h3 className="mb-1">Your Balance</h3>
-      <h2 className="m-balance">0</h2>
+      <h2 className="m-balance">{count}</h2>
         <h2>
           Earn more Coin
         </h2>

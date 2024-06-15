@@ -1,15 +1,22 @@
+import TaskItem from "./tasks/TaskItem"
 
 
 export default function Task() {
   return (
     <>
      <h2>
-      No Task available
+       Tasks available
      </h2>
      <div className="task-wrapper">
-      <div className="task-item">
-        
-      </div>
+      <TaskItem title='' reward={1000} link='' />
+      <TaskItem title='' reward={2000} link='' />
+      <TaskItem title='' reward={1000} link='' />
+      <TaskItem title='' reward={1500} link='' />
+      <TaskItem title='' reward={500} link='' />
+      <TaskItem title='' reward={2500} link='' />
+      <TaskItem title='' reward={100} link='' />
+      <TaskItem title='' reward={2000} link='' />
+      <TaskItem title='' reward={1000} link='' />
      </div>
     </>
    

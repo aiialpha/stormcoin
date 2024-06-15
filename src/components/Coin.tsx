@@ -8,7 +8,7 @@ interface CoinProps {
 const Coin: React.FC<CoinProps> = ( {touch})  => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [coinColor, setCoinColor] = useState('#FFD700'); // Gold color
-  const coinSize = 120; // Increase size for realism
+  const coinSize = 100; // Increase size for realism
   const canvasSize = coinSize * 2;
 
   useEffect(() => {

@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 // import twaLogo from '../assets/tapps.png'
 import  useCountContext  from '../UseContext';
-import { useState } from 'react';
+import {useEffect,useRef,useState} from "react"
 import Coin from '../components/Coin';
 
 interface Animation {
@@ -41,6 +41,37 @@ export default function  Home(){
     });
   };
 
+  const [ts, setTs] = useState<number | undefined>(undefined);
+  const scrollableElRef = useRef<HTMLDivElement | null>(null);
+  //const overflow = 100;
+
+  useEffect(() => {
+    const onTouchStart = (e: TouchEvent) => {
+      setTs(e.touches[0].clientY);
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      const scrollableEl = scrollableElRef.current;
+      if (scrollableEl) {
+        const scroll = scrollableEl.scrollTop;
+       // const te = e.changedTouches[0].clientY;
+      //  && ts !== undefined && ts < te
+        if (scroll <= 0 ) {
+          e.preventDefault();
+        }
+      } else {
+        e.preventDefault();
+      }
+    };
+
+    document.documentElement.addEventListener('touchstart', onTouchStart, { passive: false });
+    document.documentElement.addEventListener('touchmove', onTouchMove, { passive: false });
+
+    return () => {
+      document.documentElement.removeEventListener('touchstart', onTouchStart);
+      document.documentElement.removeEventListener('touchmove', onTouchMove);
+    };
+  }, [ts]);
 
 
  // Get the coordinates of the touch or click event
@@ -61,7 +92,7 @@ export default function  Home(){
     // };
    
   return (
-    <div id='home'>
+    <div id='home' ref={scrollableElRef}>
     <div className="community" >
       <Link to='community'>
        Click to join or create community

@@ -1,4 +1,4 @@
-import {useEffect,useRef,useState} from "react"
+import {useEffect,useRef} from "react"
 import { Outlet, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import RefPages from "./pages/RefPages";
@@ -11,36 +11,36 @@ import TouchTest from "./test/TouchTest";
 
 export default function AppNavigations() {
 
-  const [ts, setTs] = useState<number | undefined>(undefined);
-  const scrollableElRef = useRef<HTMLElement | null>(null);
-  const overflow = 100;
+  // const [ts, setTs] = useState<number | undefined>(undefined);
+   const scrollableElRef = useRef<HTMLElement | null>(null);
+   const overflow = 100;
 
-  useEffect(() => {
-    const onTouchStart = (e: TouchEvent) => {
-      setTs(e.touches[0].clientY);
-    };
+  // useEffect(() => {
+  //   const onTouchStart = (e: TouchEvent) => {
+  //     setTs(e.touches[0].clientY);
+  //   };
 
-    const onTouchMove = (e: TouchEvent) => {
-      const scrollableEl = scrollableElRef.current;
-      if (scrollableEl) {
-        const scroll = scrollableEl.scrollTop;
-        const te = e.changedTouches[0].clientY;
-        if (scroll <= 0 && ts !== undefined && ts < te) {
-          e.preventDefault();
-        }
-      } else {
-        e.preventDefault();
-      }
-    };
+  //   const onTouchMove = (e: TouchEvent) => {
+  //     const scrollableEl = scrollableElRef.current;
+  //     if (scrollableEl) {
+  //       const scroll = scrollableEl.scrollTop;
+  //       const te = e.changedTouches[0].clientY;
+  //       if (scroll <= 0 && ts !== undefined && ts < te) {
+  //         e.preventDefault();
+  //       }
+  //     } else {
+  //       e.preventDefault();
+  //     }
+  //   };
 
-    document.documentElement.addEventListener('touchstart', onTouchStart, { passive: false });
-    document.documentElement.addEventListener('touchmove', onTouchMove, { passive: false });
+  //   document.documentElement.addEventListener('touchstart', onTouchStart, { passive: false });
+  //   document.documentElement.addEventListener('touchmove', onTouchMove, { passive: false });
 
-    return () => {
-      document.documentElement.removeEventListener('touchstart', onTouchStart);
-      document.documentElement.removeEventListener('touchmove', onTouchMove);
-    };
-  }, [ts]);
+  //   return () => {
+  //     document.documentElement.removeEventListener('touchstart', onTouchStart);
+  //     document.documentElement.removeEventListener('touchmove', onTouchMove);
+  //   };
+  // }, [ts]);
 
    useEffect(() => {
     // Set the body's overflow, margin, height, and padding
