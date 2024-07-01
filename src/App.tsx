@@ -1,6 +1,8 @@
 
+import { ToastContainer } from "react-toastify";
 import "./App.css";
 import AppNavigations from "./AppNavigations";
+
 
 
 
@@ -12,6 +14,7 @@ function App() {
     <>
       <AppNavigations />
       <Navbar />
+      <ToastContainer  hideProgressBar={true} position="bottom-center" closeButton={false}/>
     </>
   );
 }

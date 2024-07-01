@@ -1,7 +1,7 @@
-import useCountContext from "../UseContext";
+import useAppContext from "../UseContext";
 
 export default function Boost() {
-  const {count} = useCountContext();
+  const {count} = useAppContext();
   return (
     <div>
       <h3 className="mb-1">Your Balance</h3>

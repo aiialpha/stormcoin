@@ -2,7 +2,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding:0 1rem;
+  padding: 1rem;
   text-align: center;
   user-select: none;
 }
@@ -17,30 +17,36 @@
   will-change: filter;
   transition: filter 300ms;
 }
-.balance{
-  user-select: none;
-}
+
 /* .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 } */
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-.balance{
-  display: flex;
+.balance-container{
+  padding: 2em;
+   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  :is(img){
+  user-select: none;
+    :is(img){
       width: 25px;
   height: 25px;
   }
-  & h2{
+}
+
+.balance{
+ 
     font-size: 48px;
     font-weight: 800;
     line-height: 64px;
     font-style: normal;
     font-variant-numeric: lining-nums tabular-nums;
     margin: 0;
+    @media(width < 546px){
+      font-size: 42px;
+    
   }
 }
 .m-balance{
@@ -84,6 +90,7 @@ nav img{
  height: 100%;
  font-size: 12px;
  color: white;
+ border-bottom: 0px !important;
 }
 .nav-tabs svg{
   font-size: 25px;
@@ -111,10 +118,9 @@ nav img{
 .community{
   height: 60px;
   width: 100%;
-  margin-top: 1rem;
   border-radius: 50px;
   place-content: center;
-  background-color: rgba(255, 255, 255, 0.507);
+  background-color: #221f1f;
   :is(a){
     color: white;
   }
@@ -189,13 +195,16 @@ Booster page css
 .task-item{
   font-size: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid #dedede;
+  border: 1px solid #221f1f;
+  background-color: #221f1f;
+  padding: 10px;
   border-radius: 10px;
   margin-bottom: 8px;
-  & h4{
+  & p{
     margin: 0;
+    font-weight: 500;
   }
   & .descrip{
     text-align: left;;
@@ -204,7 +213,7 @@ Booster page css
     flex-direction: column;
     & span{
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 400;
       ::before{
         content: '+';
         position: absolute;
@@ -233,10 +242,26 @@ Booster page css
   text-align: center;
   font-size: 35px;
 }
-.card {
-  padding: 2em;
-}
+
 
 .read-the-docs {
   color: #888;
+}
+
+.invite-btn{
+  display: flex;
+  justify-content: space-around;
+  .btn-70{
+    width: 75%;
+
+  }
+  .btn-20{
+    width: 20%;
+    border-radius: 15px;
+  }
+  button {
+  width: 100%;
+  padding: 20px;
+  border-radius: 40px;
+} 
 }

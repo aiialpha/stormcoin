@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 // import twaLogo from '../assets/tapps.png'
-import  useCountContext  from '../UseContext';
+import  useAppContext  from '../UseContext';
 import {useEffect,useRef,useState} from "react"
 import Coin from '../components/Coin';
 
@@ -13,14 +13,14 @@ interface Animation {
 // import WebApp from "@twa-dev/sdk";
 
 export default function  Home(){
-    const {count, setCount} = useCountContext();
+    const {count, setCount} = useAppContext();
  // fetch('http://localhost:9092/get_details', {
  // })
   //.then(res => res.json())
 // .then(data => console.log(data))
     const [animations, setAnimations] = useState<Animation[]>([]);
     const handleTouchStart = (event: React.TouchEvent<HTMLCanvasElement>) => {
-      setCount(prevCount => prevCount + 1  );
+      //setCount(prevCount => prevCount + 1 );
    //console.log(event.touches.length)
      
        // Iterate over all touches
@@ -35,6 +35,7 @@ export default function  Home(){
 
     // Remove the animated instances after the animation duration
     newAnimations.forEach(newAnimation => {
+      setCount(prevCount => prevCount + 1);
       setTimeout(() => {
         setAnimations(prevAnimations => prevAnimations.filter(anim => anim.id !== newAnimation.id));
       }, 2000); // Duration should match the CSS animation duration
@@ -99,7 +100,7 @@ export default function  Home(){
       </Link>
    
     </div>
-    <div className="card balance">
+    <div className="balance-container">
       {/* <img src={twaLogo} alt="logo" /> */}
       <h2 className='balance'> {count}</h2>
     </div>
