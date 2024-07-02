@@ -12,6 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  --font-display: "SFRounded", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -62,14 +63,18 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+li{
+  list-style-type: none;
+}
 .Toastify__toast-container {
-  top: 10px;
+  margin-top: 10px;
+  /* top: 10px;
   left: 16px;
   position: fixed;
   right: 16px;
   width: auto;
-  z-index: 999999;
-}
+  z-index: 999999;*/
+} 
 
 .Toastify__toast {
   background-color: #2d2d2dcc;

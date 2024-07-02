@@ -20,7 +20,9 @@ const TaskItem: React.FC<TaskProps> = ({title, reward,link})=> {
             setCount( p => p + reward)
             setClick(false)
             toast(`Collected ${reward} successfully`, {
-              position:'bottom-center'
+              autoClose: 300,
+              position: "top-center",
+              closeOnClick: true
             })
         }, 3000)
     }
