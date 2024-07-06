@@ -38,7 +38,7 @@ export default function  Home(){
       setCount(prevCount => prevCount + 1);
       setTimeout(() => {
         setAnimations(prevAnimations => prevAnimations.filter(anim => anim.id !== newAnimation.id));
-      }, 2000); // Duration should match the CSS animation duration
+      }, 1500); // Duration should match the CSS animation duration
     });
   };
 

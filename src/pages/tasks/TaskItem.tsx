@@ -34,7 +34,7 @@ const TaskItem: React.FC<TaskProps> = ({title, reward,link})=> {
         </i> */}
         <div className="descrip">
         <p>{title ? title : 'Join our Channel'}</p>
-        <span className="reward">{reward ? reward : '1000'}</span>
+        <span className="reward ms-0">{reward ? reward : '1000'}</span>
         </div>
         <button
         className="tsak-btn"

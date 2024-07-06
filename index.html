@@ -7,30 +7,14 @@
     <title>Storm Coin</title>
   </head>
   <body>
+    <div id="particles-js"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      function ensureDocumentIsScrollable() {
-        const isScrollable =
-          document.documentElement.scrollHeight > window.innerHeight;
-        if (!isScrollable) {
-          document.documentElement.style.setProperty(
-            "height",
-            "calc(100vh + 1px)",
-            "important"
-          );
-        }
-      }
-      function preventCollapse() {
-        if (window.scrollY === 0) {
-          window.scrollTo(0, 1);
-        }
-      }
-
-      const scrollableElement = document.querySelector("#root");
-      scrollableElement.addEventListener("touchstart", preventCollapse);
-
-      window.addEventListener("load", ensureDocumentIsScrollable);
-    </script>
+    <script src="node_modules/particles.js/particles.js"></script>
+    <script>  
+  particlesJS.load('particles-js', 'src/assets/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+  });
+    </script> 
   </body>
 </html>
