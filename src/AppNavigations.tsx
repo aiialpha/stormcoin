@@ -93,9 +93,10 @@ export default function AppNavigations() {
         <Route path="ref" element={<RefPages />} />
         <Route path="boost" element={<Boost />} />
         <Route path="task" element={<Task />} />
-        <Route path="community" element={<div>Community Page</div>} />
+        
         <Route path="test" element={<TouchTest />} />
       </Route>
+      <Route path="stormcoin/community" element={<div>Community Page</div>} />
       <Route path="*" element={<Notfound />} />
     </Routes>
         {/* <Routes>
